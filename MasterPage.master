@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title>JNCH</title>
+    <meta name="description" content="free website template" />
+    <meta name="keywords" content="enter your keywords here" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/image_slide.js"></script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="main">
+                <div id="header">
+                    <div id="banner">
+                        <div id="welcome">
+                            <h1>
+                                <asp:Image ID="Image1" ImageUrl="images/Logo.jpg" runat="server" /></h1>
+                        </div>
+                        <!--close welcome-->
+                    </div>
+                    <!--close banner-->
+                </div>
+                <!--close header-->
+
+                <div id="menu_container">
+                    <div id="menubar">
+                        <ul id="menu">
+                            <li class="current"><a href="Default.aspx">Home</a></li>
+                            <li><a href="testimonials.aspx">Testimonials</a></li>
+                            <li><a href="projects.aspx">Projects</a></li>
+                            <li><a href="contact.aspx">Contact Us</a></li>
+                            <li>
+
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="LOGIN" LogoutText="LOGOUT" LogoutAction="RedirectToLoginPage" />
+
+
+                            </li>
+                            <li>
+                                <p class="view_color">
+                                <asp:LoginView ID="LoginView1" runat="server">
+                                    <AnonymousTemplate>
+                                        [For Authorized Members Only]
+                                    </AnonymousTemplate>
+                                    <LoggedInTemplate>
+                                        [You are logged] in&nbsp;<asp:LoginName ID="LoginName1" runat="server" ForeColor="#CCCCCC" />
+                                        &nbsp;
+                                    </LoggedInTemplate>
+
+
+                                </asp:LoginView>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--close menubar-->
+                </div>
+                <!--close menu_container-->
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="footer_container">
+                <div id="footer">
+                    © Copyright 2015.
+                </div>
+                <!--close footer-->
+            </div>
+            <!--close footer_container-->
+        </div>
+    </form>
+</body>
+</html>
